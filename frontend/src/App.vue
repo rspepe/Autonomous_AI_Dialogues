@@ -43,7 +43,7 @@ export default {
   methods: {
     async fetchConversation() {
       try {
-        const response = await this.$http.get('/conversation_history.json')
+        const response = await this.$http.get('conversation_history.json')
         this.conversation = response.data
         this.$nextTick(() => {
           const container = this.$refs.chatContainer
