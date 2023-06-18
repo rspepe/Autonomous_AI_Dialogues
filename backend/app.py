@@ -83,7 +83,7 @@ def chat_AI():
             conversation_history.append(entry)
 
         # 保存
-        with open("conversation_history.json", "w") as f:
+        with open("data/conversation_history.json", "w") as f:
             json.dump(
                 {"results": list(conversation_history)}, f, ensure_ascii=False, indent=2
             )
