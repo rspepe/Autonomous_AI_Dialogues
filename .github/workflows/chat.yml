@@ -33,7 +33,9 @@ jobs:
       - name: Run chat script
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: python ./backend/app.py
+        run: |
+          cd backend
+          python app.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
