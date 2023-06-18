@@ -1,0 +1,10 @@
+{
+    "name": "Backend",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "backend",
+    "workspaceFolder": "/app",
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "/bin/bash"
+    },
+    "extensions": ["ms-python.python"]
+}

@@ -1,0 +1,30 @@
+{
+    "name": "frontend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint"
+    },
+    "dependencies": {
+        "@vue/runtime-core": "^3.2.47",
+        "axios": "^0.21.1",
+        "core-js": "^3.6.5",
+        "vue": "^3.2.47",
+        "vue-router": "^4.1.6"
+    },
+    "devDependencies": {
+        "@babel/eslint-parser": "^7.21.3",
+        "@vue/cli-plugin-babel": "^5.0.8",
+        "@vue/cli-plugin-eslint": "^5.0.8",
+        "@vue/cli-plugin-router": "^5.0.8",
+        "@vue/cli-service": "^5.0.8",
+        "@vue/eslint-config-airbnb": "^7.0.0",
+        "@vue/eslint-config-prettier": "^7.1.0",
+        "eslint": "^8.38.0",
+        "eslint-plugin-vue": "^9.11.0",
+        "vue-template-compiler": "^2.6.11"
+    }
+}

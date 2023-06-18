@@ -1,0 +1,10 @@
+{
+    "name": "Frontend",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "frontend",
+    "workspaceFolder": "/app",
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "/bin/bash"
+    },
+    "extensions": ["octref.vetur"]
+}
