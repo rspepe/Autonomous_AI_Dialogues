@@ -44,6 +44,9 @@ export default {
     setInterval(this.fetchConversation, 30 * 60 * 1000) // 30分ごとにfetchConversationを呼び出す
     setInterval(() => {
       this.now = new Date().toISOString()
+      this.$nextTick(() => {
+        window.scrollTo(0, document.body.scrollHeight)
+      })
     }, 1000) // 1秒ごとに現在の時刻を更新
   },
   methods: {
@@ -51,10 +54,6 @@ export default {
       try {
         const response = await this.$http.get('conversation_history.json')
         this.conversation = response.data
-        this.$nextTick(() => {
-          const container = this.$refs.chatContainer
-          container.scrollTop = container.scrollHeight
-        })
       } catch (error) {
         // console.error('Error fetching conversation:', error)
       }
