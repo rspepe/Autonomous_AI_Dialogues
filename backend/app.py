@@ -1,10 +1,11 @@
-import os
-import openai
 from collections import deque
-import logging
 import datetime
 import json
+import logging
+import openai
+import os
 import re
+import urllib.request
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -92,8 +93,18 @@ def chat_AI():
         logging.error(str(e))
 
 
+def fetch_and_store_conversation(url):
+    response = urllib.request.urlopen(url)
+    data = json.load(response)
+
+    # 会話ログをdequeに追加
+    for item in data["results"]:
+        conversation_history.append(item)
+
+
 if __name__ == "__main__":
     logging.info("Starting...")
-    # restore_history()
-    chat_AI()
+    fetch_and_store_conversation(
+        "https://rspepe.github.io/Autonomous_AI_Dialogues/conversation_history.json"
+    )
     chat_AI()
