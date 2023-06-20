@@ -23,7 +23,7 @@ def chat_AI():
     start_datetime = datetime.datetime.now()
     try:
         if not conversation_history:
-            prompt = 'AI1とAI2の会話を20往復の会話をして。口調はフレンドリーで。会話はその後も続くように終わらせないで。会話はJSON形式で[{"name":"名前","message":"メッセージ"}]'
+            prompt = 'AI1とAI2の会話を20往復の会話をして。口調はフレンドリーで。会話はその後も続くように終わらせないで。60文字以内で。会話はJSON形式で[{"name":"名前","message":"メッセージ"}]'
         else:
             # 過去の最後の日時に上書き
             start_datetime = datetime.datetime.fromisoformat(
@@ -42,7 +42,7 @@ def chat_AI():
                 conversation_string += f'「{item["name"]}」さんが「{item["message"]}」と言いました。'
 
             prompt = (
-                f"AI1とAI2が以下の会話をしています。 {conversation_string} この会話に続く会話を20往復出力して。口調はフレンドリーで。会話はその後も続くように終わらせないで。会話はJSON形式で"
+                f"AI1とAI2が以下の会話をしています。 {conversation_string} この会話に続く会話を20往復出力して。口調はフレンドリーで。60文字以内で。会話はその後も続くように終わらせないで。会話はJSON形式で"
                 + '[{"name":"名前","message":"メッセージ"}]'
             )
 
