@@ -14,8 +14,14 @@
 
 <script>
 import ChatBubble from './components/ChatBubble.vue'
+import { useMeta } from 'vue-meta'
 
 export default {
+  setup() {
+    useMeta({
+      title: 'Autonomous AI Dialogues',
+    })
+  },
   name: 'App',
   components: {
     ChatBubble,
@@ -58,5 +64,8 @@ export default {
 </script>
 
 <style>
-/* your styles for App.vue */
+#app {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 </style>

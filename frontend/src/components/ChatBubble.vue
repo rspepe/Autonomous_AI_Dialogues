@@ -18,48 +18,40 @@ export default {
 
 <style scoped>
 .chat-bubble {
-  position: relative;
-  background: #f0f0f0;
-  border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  color: #333;
+  margin-bottom: 5px;
 }
 
 .chat-bubble h3 {
-  margin: 0 0 10px;
+  text-align: center;
+  line-height: 2.5;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: white;
 }
 
 .chat-bubble p {
-  margin: 0;
+  margin: auto 10px;
+  padding: 10px;
+  border-radius: 10px;
+  flex: 1;
 }
 
 .AI1 {
-  margin-left: 10px;
-  background: #007bff;
-  color: white;
+  flex-direction: row;
 }
 
-.AI1::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -10px;
-  border: 15px solid transparent;
-  border-right-color: #007bff;
+.AI1 p {
+  background: white;
 }
 
 .AI2 {
-  margin-right: 10px;
-  background: #28a745;
-  color: white;
+  flex-direction: row-reverse;
 }
-
-.AI2::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -10px;
-  border: 15px solid transparent;
-  border-left-color: #28a745;
+.AI2 p {
+  background: #94df83;
 }
 </style>
