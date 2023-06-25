@@ -22,7 +22,7 @@ def chat_AI():
     # 表示可能開始日時のスタート日時を定義
     start_datetime = datetime.datetime.now()
     try:
-        if conversation_history:
+        if not conversation_history:
             prompt = 'AI1 and AI2 with 20 back and forth conversations. In Japanese. The tone should be friendly. Each response should be no more than 30 characters. Conversations should be in JSON format [{"name":"name","message":"message"}]'
         else:
             # 過去の最後の日時に上書き
