@@ -22,7 +22,7 @@ def chat_AI():
     # 表示可能開始日時のスタート日時を定義
     start_datetime = datetime.datetime.now()
     try:
-        if conversation_history:
+        if not conversation_history:
             prompt = 'AI1とAI2の会話を20往復の会話をして。口調はフレンドリーで。会話はその後も続くように終わらせないで。30文字以内で。会話はJSON形式で[{"name":"名前","message":"メッセージ"}]'
         else:
             # 過去の最後の日時に上書き
