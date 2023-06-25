@@ -22,8 +22,8 @@ def chat_AI():
     # 表示可能開始日時のスタート日時を定義
     start_datetime = datetime.datetime.now()
     try:
-        if not conversation_history:
-            prompt = 'AI1とAI2の会話を20往復の会話をして。口調はフレンドリーで。会話はその後も続くように終わらせないで。60文字以内で。会話はJSON形式で[{"name":"名前","message":"メッセージ"}]'
+        if conversation_history:
+            prompt = 'AI1 and AI2 with 20 back and forth conversations. In Japanese. The tone should be friendly. Each response should be no more than 30 characters. Conversations should be in JSON format [{"name":"name","message":"message"}]'
         else:
             # 過去の最後の日時に上書き
             start_datetime = datetime.datetime.fromisoformat(
@@ -39,11 +39,11 @@ def chat_AI():
             # Iterate over each item in the last 10 items
             for item in last_10_items:
                 # Append to the conversation string in the required format
-                conversation_string += f'「{item["name"]}」さんが「{item["message"]}」と言いました。'
+                conversation_string += f'「{item["name"]}」 said「{item["message"]}」. '
 
             prompt = (
-                f"AI1とAI2が以下の会話をしています。 {conversation_string} この会話に続く会話を20往復出力して。口調はフレンドリーで。60文字以内で。会話はその後も続くように終わらせないで。会話はJSON形式で"
-                + '[{"name":"名前","message":"メッセージ"}]'
+                f"AI1 and AI2 with 20 back and forth conversations. In Japanese. {conversation_string} Output 20 back and forth conversations following this conversation. Be friendly in tone, no more than 30 words. Don't end the conversation so that it continues afterwards. Conversations must be in JSON format."
+                + '[{"name":"name","message":"message"}]'
             )
 
         logging.info(f"prompt: {prompt}")
