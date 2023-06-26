@@ -25,11 +25,6 @@ def chat_AI():
         if not conversation_history:
             prompt = 'AI1とAI2の会話を20往復の会話をして。口調はフレンドリーで。会話はその後も続くように終わらせないで。30文字以内で。会話はJSON形式で[{"name":"名前","message":"メッセージ"}]'
         else:
-            # 過去の最後の日時に上書き
-            start_datetime = datetime.datetime.fromisoformat(
-                conversation_history[-1]["visible_from"]
-            )
-
             # Get the last 10 items from the conversation_history deque
             last_10_items = list(conversation_history)[-10:]
 
@@ -78,7 +73,7 @@ def chat_AI():
         # conversation_historyにvisible_fromを追加
         for i, entry in enumerate(response):
             entry["visible_from"] = (
-                start_datetime + datetime.timedelta(minutes=i + 1)
+                start_datetime + datetime.timedelta(minutes=i + 2)
             ).isoformat()
             logging.info(f"entry: {entry}")
             conversation_history.append(entry)
