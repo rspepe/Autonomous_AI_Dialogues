@@ -2,7 +2,8 @@
 <template>
   <div class="chat-bubble" :class="name">
     <h3>{{ name }}</h3>
-    <p>{{ text }}</p>
+    <p class="message">{{ text }}</p>
+    <p class="datetime">{{ formattedTime }}</p>
   </div>
 </template>
 
@@ -12,6 +13,15 @@ export default {
   props: {
     name: String,
     text: String,
+    visible_from: String,
+  },
+  computed: {
+    formattedTime() {
+      if (!this.visible_from) return ''
+      let date = new Date(this.visible_from)
+      date.setHours(date.getHours() + 9)
+      return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    },
   },
 }
 </script>
@@ -33,7 +43,7 @@ export default {
   background-color: white;
 }
 
-.chat-bubble p {
+.chat-bubble p.message {
   margin: auto 10px;
   padding: 10px;
   border-radius: 10px;
@@ -44,14 +54,18 @@ export default {
   flex-direction: row;
 }
 
-.AI1 p {
+.AI1 p.message {
   background: white;
 }
 
 .AI2 {
   flex-direction: row-reverse;
 }
-.AI2 p {
+.AI2 p.message {
   background: #94df83;
+}
+
+p.datetime {
+  margin-top: auto;
 }
 </style>

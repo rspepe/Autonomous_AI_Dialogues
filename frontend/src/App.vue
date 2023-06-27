@@ -7,6 +7,7 @@
         :key="index"
         :name="message.name"
         :text="message.message"
+        :visible_from="message.visible_from"
       />
     </div>
   </div>
