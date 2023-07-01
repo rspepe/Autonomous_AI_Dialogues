@@ -1,15 +1,13 @@
 <!-- src/App.vue -->
 <template>
-  <div id="app">
-    <div class="chat-container" ref="chatContainer">
-      <ChatBubble
-        v-for="(message, index) in visibleMessages"
-        :key="index"
-        :name="message.name"
-        :text="message.message"
-        :visible_from="message.visible_from"
-      />
-    </div>
+  <div class="chat-container" ref="chatContainer">
+    <ChatBubble
+      v-for="(message, index) in visibleMessages"
+      :key="index"
+      :name="message.name"
+      :text="message.message"
+      :visible_from="message.visible_from"
+    />
   </div>
 </template>
 
