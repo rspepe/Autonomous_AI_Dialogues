@@ -67,5 +67,6 @@ export default {
 
 p.datetime {
   margin-top: auto;
+  font-size: 11px;
 }
 </style>
