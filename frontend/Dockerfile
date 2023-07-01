@@ -1,7 +1,7 @@
 # frontend/Dockerfile
 
-# Node.js 19イメージを指定
-FROM node:19
+# Node.js 18イメージを指定
+FROM node:18
 
 WORKDIR /app
 
