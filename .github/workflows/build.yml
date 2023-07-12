@@ -4,7 +4,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '*/40 * * * *' # Run every 20 minutes
+    - cron: '0 * * * *' # Run every a hour
 
 permissions:
   contents: read
