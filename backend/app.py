@@ -73,7 +73,7 @@ def chat_AI():
         # conversation_historyにvisible_fromを追加
         for i, entry in enumerate(response):
             entry["visible_from"] = (
-                start_datetime + datetime.timedelta(minutes=i * 3)
+                start_datetime + datetime.timedelta(minutes=i * 6)
             ).isoformat()
             logging.info(f"entry: {entry}")
             conversation_history.append(entry)
